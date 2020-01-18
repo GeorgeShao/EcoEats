@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
-                    setContentView(R.layout.activity_schedule);
                     intent = new Intent(MainActivity.this, Schedule.class);
                     startActivity(intent);
                     return true;
@@ -33,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
-                    setContentView(R.layout.activity_settings);
                     intent = new Intent(MainActivity.this, Settings.class);
                     startActivity(intent);
                     return true;
