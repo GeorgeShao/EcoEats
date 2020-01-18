@@ -1,5 +1,6 @@
 package com.ecoeats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_shopping_list:
                     mTextMessage.setText(R.string.title_list);
+                    Intent intent = new Intent(MainActivity.this, ShoppingList.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
                     mTextMessage.setText(R.string.title_settings);
