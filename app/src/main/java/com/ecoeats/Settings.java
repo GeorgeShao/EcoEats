@@ -7,9 +7,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
-
+import android.widget.ListAdapter.*;
 public class Settings extends AppCompatActivity {
 
     @Override
@@ -21,10 +24,8 @@ public class Settings extends AppCompatActivity {
         navigation.getMenu().getItem(3).setChecked(true);
     }
 
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Intent intent;
