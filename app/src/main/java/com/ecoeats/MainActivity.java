@@ -17,18 +17,25 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
+                    //intent = new Intent(MainActivity.this, <put class name here>.class);
+                    //startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
                     setContentView(R.layout.activity_schedule);
+                    //intent = new Intent(MainActivity.this, <put class name here>.class);
+                    //startActivity(intent);
                     return true;
                 case R.id.navigation_shopping_list:
-                    Intent intent = new Intent(MainActivity.this, ShoppingList.class);
+                    intent = new Intent(MainActivity.this, ShoppingList.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
                     setContentView(R.layout.activity_settings);
+                    //intent = new Intent(MainActivity.this, <put class name here>.class);
+                    //startActivity(intent);
                     return true;
             }
             return false;
