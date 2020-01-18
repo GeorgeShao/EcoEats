@@ -19,19 +19,15 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
-                    mTextMessage.setText(R.string.title_local_food);
                     return true;
                 case R.id.navigation_schedule:
-                    mTextMessage.setText(R.string.title_schedule);
                     setContentView(R.layout.activity_schedule);
                     return true;
                 case R.id.navigation_shopping_list:
-                    mTextMessage.setText(R.string.title_list);
                     Intent intent = new Intent(MainActivity.this, ShoppingList.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
-                    mTextMessage.setText(R.string.title_settings);
                     setContentView(R.layout.activity_settings);
                     return true;
             }
