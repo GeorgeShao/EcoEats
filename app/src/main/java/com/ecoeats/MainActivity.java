@@ -20,22 +20,24 @@ public class MainActivity extends AppCompatActivity {
             Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
-                    //intent = new Intent(MainActivity.this, <put class name here>.class);
-                    //startActivity(intent);
+                    intent = new Intent(MainActivity.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
-                    setContentView(R.layout.activity_schedule);
-                    //intent = new Intent(MainActivity.this, <put class name here>.class);
-                    //startActivity(intent);
+                    intent = new Intent(MainActivity.this, Schedule.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_shopping_list:
                     intent = new Intent(MainActivity.this, ShoppingList.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
-                    setContentView(R.layout.activity_settings);
-                    //intent = new Intent(MainActivity.this, <put class name here>.class);
-                    //startActivity(intent);
+                    intent = new Intent(MainActivity.this, Settings.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
             }
             return false;

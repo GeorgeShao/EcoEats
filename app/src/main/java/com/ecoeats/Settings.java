@@ -15,9 +15,10 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.shopping_list);
+        setContentView(R.layout.activity_settings);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.getMenu().getItem(3).setChecked(true);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -25,22 +26,27 @@ public class Settings extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
-                    Intent local_food = new Intent(Settings.this, MainActivity.class);
-                    startActivity(local_food);
+                    intent = new Intent(Settings.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
-                    Intent schedule = new Intent(Settings.this, Schedule.class);
-                    startActivity(schedule);
+                    intent = new Intent(Settings.this, Schedule.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_shopping_list:
-                    Intent shopping_list = new Intent(Settings.this, ShoppingList.class);
-                    startActivity(shopping_list);
+                    intent = new Intent(Settings.this, ShoppingList.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
-                    Intent settings = new Intent(Settings.this, Settings.class);
-                    startActivity(settings);
+                    intent = new Intent(Settings.this, Settings.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
             }
             return false;

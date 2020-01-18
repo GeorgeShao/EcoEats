@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
@@ -35,18 +34,27 @@ public class ShoppingList extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
-                    Intent local_food = new Intent(ShoppingList.this, MainActivity.class);
-                    startActivity(local_food);
+                    intent = new Intent(ShoppingList.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
+                    intent = new Intent(ShoppingList.this, Schedule.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_shopping_list:
-                    Intent intent = new Intent(ShoppingList.this, ShoppingList.class);
+                    intent = new Intent(ShoppingList.this, ShoppingList.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
+                    intent = new Intent(ShoppingList.this, Settings.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
             }
             return false;
