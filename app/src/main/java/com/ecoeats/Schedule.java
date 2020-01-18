@@ -22,22 +22,27 @@ public class Schedule extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
-                    Intent local_food = new Intent(Schedule.this, MainActivity.class);
-                    startActivity(local_food);
+                    intent = new Intent(Schedule.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
-                    Intent schedule = new Intent(Schedule.this, Schedule.class);
-                    startActivity(schedule);
+                    intent = new Intent(Schedule.this, Schedule.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_shopping_list:
-                    Intent shopping_list = new Intent(Schedule.this, ShoppingList.class);
-                    startActivity(shopping_list);
+                    intent = new Intent(Schedule.this, ShoppingList.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
-                    Intent settings = new Intent(Schedule.this, Settings.class);
-                    startActivity(settings);
+                    intent = new Intent(Schedule.this, Settings.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     return true;
             }
             return false;
