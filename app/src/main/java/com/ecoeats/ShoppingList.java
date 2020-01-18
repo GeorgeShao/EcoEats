@@ -54,7 +54,7 @@ public class ShoppingList extends AppCompatActivity {
     public void addMeal(String mealName, ArrayList<String> ingredients, ArrayList<Integer> quantity) {
         String entry = mealName + "\n";
         for (int i = 0; i < ingredients.size(); i++) {
-            entry += "- " + ingredients.get(i) + " x" + quantity.get(i) + "\n";
+            entry += "  - " + ingredients.get(i) + " x" + quantity.get(i) + "\n";
         }
         itemsList.add(entry);
         listAdapter.notifyDataSetChanged();
