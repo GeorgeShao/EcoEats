@@ -21,6 +21,7 @@ public class Settings extends AppCompatActivity {
         navigation.getMenu().getItem(3).setChecked(true);
     }
 
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

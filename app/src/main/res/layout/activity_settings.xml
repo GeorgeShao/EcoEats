@@ -31,91 +31,142 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation"
+        android:thumb="@drawable/thumb"/>
 
     <TextView
         android:id="@+id/food_pref"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="28dp"
         android:gravity="center_horizontal"
         android:text="@string/food_pref"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/commitment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginStart="40dp"
-        android:gravity="center_horizontal"
-        android:text="@string/meat_freq"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/intro" />
 
     <Spinner
         android:id="@+id/commitment_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toEndOf="@+id/commitment"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="48dp"
+        app:layout_constraintStart_toEndOf="@+id/location"
+        tools:layout_editor_absoluteY="611dp" />
 
     <TextView
-        android:id="@+id/option_1"
-        android:layout_width="468dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="396dp"
+        android:id="@+id/commitment"
+        android:layout_width="466dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="140dp"
         android:gravity="center_horizontal"
-        android:text=" Choice1                       Choice2                    Choice2"
+        android:text="@string/meat_freq"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/food_pref" />
 
-    <ImageView
-        android:id="@+id/choice1"
-        android:layout_width="209dp"
-        android:layout_height="182dp"
-        android:layout_marginEnd="292dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/option_1"
-        app:layout_constraintEnd_toEndOf="@+id/option_1"
-        app:srcCompat="@drawable/choice1" />
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:gravity="center_horizontal"
+        android:text="Please enter your city or province:"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="611dp" />
 
-    <ImageView
-        android:id="@+id/choice2"
-        android:layout_width="209dp"
-        android:layout_height="182dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/option_1"
-        app:layout_constraintEnd_toEndOf="@+id/option_1"
-        app:srcCompat="@drawable/choice2" />
+    <CheckBox
+        android:id="@+id/mediterranean"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="Mediterranean"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/food_pref"
+        app:layout_constraintTop_toBottomOf="@+id/italian" />
 
-    <ImageView
-        android:id="@+id/choice3"
-        android:layout_width="208dp"
-        android:layout_height="178dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginBottom="20dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/option_1"
-        app:layout_constraintStart_toStartOf="@+id/option_1"
-        app:srcCompat="@drawable/choice3" />
+    <CheckBox
+        android:id="@+id/indian"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="South Asian"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/food_pref"
+        app:layout_constraintTop_toBottomOf="@+id/mediterranean" />
+
+    <CheckBox
+        android:id="@+id/italian"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
+        android:text="Italian"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/food_pref"
+        app:layout_constraintTop_toBottomOf="@+id/intro" />
+
+    <CheckBox
+        android:id="@+id/greek"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:text="Greek"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/mediterranean"
+        app:layout_constraintTop_toBottomOf="@+id/american" />
+
+    <CheckBox
+        android:id="@+id/asian"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:text="Asian"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/indian"
+        app:layout_constraintTop_toBottomOf="@+id/greek" />
+
+    <CheckBox
+        android:id="@+id/american"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        android:text="American"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/italian"
+        app:layout_constraintTop_toBottomOf="@+id/intro" />
+
+    <SeekBar
+        android:id="@+id/meal_number_bar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="454dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:background="#0F0"
+        android:max="14"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commitment" />
+
 
 </android.support.constraint.ConstraintLayout>
