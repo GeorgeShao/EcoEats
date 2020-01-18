@@ -2,4 +2,11 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--George Dimens-->
+    <dimen name="schedule_card_margins">16dp</dimen>
+    <dimen name="schedule_text_margins">8dp</dimen>
+    <dimen name="schedule_mealtype_textsize">20sp</dimen>
+    <dimen name="schedule_recipename_textsize">40sp</dimen>
+    <dimen name="schedule_timereq_textsize">25sp</dimen>
 </resources>
