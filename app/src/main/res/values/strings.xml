@@ -3,5 +3,26 @@
     <string name="title_local_food">Local Produce</string>
     <string name="title_schedule">Schedule</string>
     <string name="title_list">Shopping List</string>
-    <string name="title_settings">Let\'s get to know you better</string>
+    <string name="title_settings">Settings</string>
+
+    <!--George Strings-->
+    <string name="schedule_message">Today</string>
+    <string name="schedule_lunch">Lunch</string>
+    <string name="schedule_dinner">Dinner</string>
+    <string name="schedule_lunch_recipe_name">Name of Delicious Lunch</string>
+    <string name="schedule_lunch_time_required">Time required: 25 mins</string>
+    <string name="schedule_dinner_recipe_name">Name of Delicious Dinner</string>
+    <string name="schedule_dinner_time_required">Time required: 30 mins</string>
+
+    <!-- Mutasem's Strings -->
+    <string name="settings_intro">Let\'s get to know you better\n Please tell us a bit about yourself :)</string>
+    <string name="food_pref">What are your preferred cuisines: </string>
+    <string name="meat_freq">Commitment (lunch and dinner) for the week: </string>
+    <string-array name="meal_number">
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
+        <item>Option 4</item>
+    </string-array>
+
 </resources>
