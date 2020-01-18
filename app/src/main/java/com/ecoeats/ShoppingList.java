@@ -38,18 +38,22 @@ public class ShoppingList extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
                     intent = new Intent(ShoppingList.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
                     intent = new Intent(ShoppingList.this, Schedule.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_shopping_list:
                     intent = new Intent(ShoppingList.this, ShoppingList.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
                     intent = new Intent(ShoppingList.this, Settings.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;
             }
