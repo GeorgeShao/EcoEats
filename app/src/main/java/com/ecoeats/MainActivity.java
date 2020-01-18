@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new SubjectData("Parsnips", "", "https://www.simplyrecipes.com/wp-content/uploads/2009/12/parsnips-horiz-1800.jpg"));
         arrayList.add(new SubjectData("Rutabaga", "", "https://www.farmersalmanac.com/wp-content/uploads/2014/12/turnip-AdobeStock_95185232.jpg"));
         arrayList.add(new SubjectData("Rhubarb", "", "https://theviewfromgreatisland.com/wp-content/uploads/2019/04/rhubarb-stalks-e1554481252586.jpg"));
-        arrayList.add(new SubjectData("Strawberries", "", "https://theviewfromgreatisland.com/wp-content/uploads/2019/04/rhubarb-stalks-e1554481252586.jpg"));
+        arrayList.add(new SubjectData("Strawberries", "", "https://highlandparklbc.files.wordpress.com/2019/06/strawberries.jpg?w=676"));
         arrayList.add(new SubjectData("Lettuce", "", "https://cfig.ca/wp-content/uploads/2018/11/romaine.jpg"));
         arrayList.add(new SubjectData("Peppers", "", "https://i5.walmartimages.ca/images/Enlarge/284/684/6000191284684.jpg"));
         arrayList.add(new SubjectData("Sprouts", "", "https://cdn.drweil.com/wp-content/uploads/2016/12/diet-nutrition_recipes_stir-fried-bean-sprouts_2716x1811_000064913441-600x450.jpg"));
