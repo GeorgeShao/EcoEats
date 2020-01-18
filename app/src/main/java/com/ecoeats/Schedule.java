@@ -39,8 +39,8 @@ public class Schedule extends AppCompatActivity {
                     startActivity(shopping_list);
                     return true;
                 case R.id.navigation_settings:
-                    Intent shopping_list = new Intent(Schedule.this, Settings.class);
-                    startActivity(shopping_list);
+                    Intent settings = new Intent(Schedule.this, Settings.class);
+                    startActivity(settings);
                     return true;
             }
             return false;
