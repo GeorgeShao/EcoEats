@@ -53,14 +53,14 @@ class CustomAdapter implements ListAdapter {
         SubjectData subjectData=arrayList.get(position);
         if(convertView==null) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            convertView=layoutInflater.inflate(R.layout.list_row, null);
+            convertView=layoutInflater.inflate(R.layout.localfoodlistelement, null);
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                 }
             });
             TextView tittle=convertView.findViewById(R.id.title);
-            ImageView imag=convertView.findViewById(R.id.list_image);
+            ImageView imag=convertView.findViewById(R.id.icon);
             tittle.setText(subjectData.SubjectName);
             Picasso.with(context)
                     .load(subjectData.Image)
