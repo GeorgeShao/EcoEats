@@ -65,10 +65,10 @@
         android:id="@+id/commitment_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="156dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/commitment"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/Choice1"
+        android:id="@+id/choice1"
         android:layout_width="254dp"
         android:layout_height="184dp"
         android:layout_marginEnd="256dp"
@@ -94,6 +94,6 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/option_1"
         app:layout_constraintEnd_toEndOf="@+id/option_1"
-        app:srcCompat="@drawable/Choice1" />
+        app:srcCompat="@drawable/choice1" />
 
 </android.support.constraint.ConstraintLayout>

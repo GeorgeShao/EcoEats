@@ -17,7 +17,7 @@
     <!-- Mutasem's Strings -->
     <string name="settings_intro">Let\'s get to know you better\n Please tell us a bit about yourself :)</string>
     <string name="food_pref">What are your preferred cuisines: </string>
-    <string name="meat_freq">Commitment (lunch and dinner) for the week: </string>
+    <string name="meat_freq">Lunch and dinner meal commitments for the week: </string>
     <string-array name="meal_number">
         <item>Option 1</item>
         <item>Option 2</item>
