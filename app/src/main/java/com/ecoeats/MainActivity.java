@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_local_food:
-                    //intent = new Intent(MainActivity.this, <put class name here>.class);
-                    //startActivity(intent);
+                    intent = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_schedule:
                     setContentView(R.layout.activity_schedule);
-                    //intent = new Intent(MainActivity.this, <put class name here>.class);
-                    //startActivity(intent);
+                    intent = new Intent(MainActivity.this, Schedule.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_shopping_list:
                     intent = new Intent(MainActivity.this, ShoppingList.class);
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_settings:
                     setContentView(R.layout.activity_settings);
-                    //intent = new Intent(MainActivity.this, <put class name here>.class);
-                    //startActivity(intent);
+                    intent = new Intent(MainActivity.this, Settings.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
