@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_schedule:
                     mTextMessage.setText(R.string.title_schedule);
-                    setContentView(R.layout.activity_schedule)
+                    setContentView(R.layout.activity_schedule);
                     return true;
                 case R.id.navigation_shopping_list:
                     mTextMessage.setText(R.string.title_list);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_settings:
                     mTextMessage.setText(R.string.title_settings);
-                    setContentView(R.layout.activity_settings)
+                    setContentView(R.layout.activity_settings);
                     return true;
             }
             return false;
