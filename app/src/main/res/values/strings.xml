@@ -4,4 +4,13 @@
     <string name="title_schedule">Schedule</string>
     <string name="title_list">Shopping List</string>
     <string name="title_settings">Let\'s get to know you better</string>
+
+    <!--George Strings-->
+    <string name="schedule_message">Today</string>
+    <string name="schedule_lunch">Lunch</string>
+    <string name="schedule_dinner">Dinner</string>
+    <string name="schedule_lunch_recipe_name">Name of Delicious Lunch</string>
+    <string name="schedule_lunch_time_required">Time required: 25 mins</string>
+    <string name="schedule_dinner_recipe_name">Name of Delicious Dinner</string>
+    <string name="schedule_dinner_time_required">Time required: 30 mins</string>
 </resources>
