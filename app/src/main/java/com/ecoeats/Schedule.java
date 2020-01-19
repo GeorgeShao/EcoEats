@@ -49,7 +49,9 @@ public class Schedule extends AppCompatActivity {
         cuisines.add("South-Asian");
 
         getRecipes();
-        displaySchedule(0);
+        if(recipes.size()>2){
+            displaySchedule(0);
+        }
 
     }
 
