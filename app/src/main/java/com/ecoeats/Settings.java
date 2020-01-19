@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -16,12 +17,33 @@ import java.util.List;
 
 public class Settings extends AppCompatActivity {
 
+    CheckBox Italian, American, Mediterranean, Caribbean, SouthAsian, Asian;
+    ArrayList<String> cuisines;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Italian = (CheckBox) findViewById(R.id.italian);
+        American = (CheckBox) findViewById(R.id.american);
+        Mediterranean = (CheckBox) findViewById(R.id.mediterranean);
+        SouthAsian = (CheckBox) findViewById(R.id.indian);
+        Asian = (CheckBox) findViewById(R.id.asian);
+        Caribbean = (CheckBox) findViewById(R.id.caribbean);
+        cuisines = new ArrayList<>();
+        if (Italian.isChecked())
+            cuisines.add("Italian");
+        if (American.isChecked())
+            cuisines.add("American");
+        if (Mediterranean.isChecked())
+            cuisines.add("Mediterranean");
+        if (SouthAsian.isChecked())
+            cuisines.add("South-Asian");
+        if(Asian.isChecked())
+            cuisines.add("Asian");
+        if(Caribbean.isChecked())
+            cuisines.add("Caribbean");
         navigation.getMenu().getItem(3).setChecked(true);
 
         Spinner spinner;
@@ -67,6 +89,7 @@ public class Settings extends AppCompatActivity {
                     return true;
                 case R.id.navigation_schedule:
                     intent = new Intent(Settings.this, Schedule.class);
+                    intent.putExtra("cuisines", cuisines);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;

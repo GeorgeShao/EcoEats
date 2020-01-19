@@ -25,7 +25,7 @@ public class Schedule extends AppCompatActivity {
     private TextView lunchText;
     private TextView dinnerText;
     private ArrayList<Recipe> recipes =  new ArrayList<>();
-    private ArrayList<String> cuisines = new ArrayList<>();
+    private ArrayList<String> cuisines;
     private FirebaseFirestore db;
 
 
@@ -36,7 +36,10 @@ public class Schedule extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.getMenu().getItem(1).setChecked(true);
-
+        Bundle bundle = getIntent().getExtras();
+        /*if (bundle != null) {
+            cuisines = bundle.getStringArrayList("cuisines");
+        }*/
         db = FirebaseFirestore.getInstance();
 
         lunchText =  findViewById(R.id.recipe_name_lunch_textview);
@@ -52,7 +55,6 @@ public class Schedule extends AppCompatActivity {
         if(recipes.size()>2){
             displaySchedule(0);
         }
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
