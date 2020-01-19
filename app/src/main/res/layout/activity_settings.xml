@@ -67,7 +67,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#0F0"
+        android:background="@color/colorPrimary"
         android:max="14"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
