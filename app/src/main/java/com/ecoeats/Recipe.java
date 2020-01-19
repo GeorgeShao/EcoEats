@@ -1,5 +1,7 @@
 package com.ecoeats;
 
+import android.support.annotation.NonNull;
+
 public class Recipe {
     private String name;
     private String[] Ingredients = new String[30];
@@ -29,6 +31,12 @@ public class Recipe {
 
     public String getName() {
         return name;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.name+ " " + this.time;
     }
 }
 

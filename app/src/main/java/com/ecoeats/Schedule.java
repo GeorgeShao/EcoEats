@@ -108,7 +108,14 @@ public class Schedule extends AppCompatActivity {
                         if(!queryDocumentSnapshots.isEmpty()){
                             List<DocumentSnapshot> dSnaps = queryDocumentSnapshots.getDocuments();
                             for (DocumentSnapshot dSnap:dSnaps){
-                                recipes.add(dSnap.toObject(Recipe.class));
+                                Recipe temporaryRecipe = dSnap.toObject(Recipe.class);
+                                if (! (temporaryRecipe == null)){
+                                    Log.e("recipe from Snapshot", temporaryRecipe.toString());
+                                    recipes.add(temporaryRecipe);
+                                }
+                                else {
+                                    Log.e("recipe from Snapshot", "Recipe not converted");
+                                }
                             }
                         }
                         else{
