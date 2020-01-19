@@ -102,6 +102,26 @@ public class Schedule extends AppCompatActivity {
     private void getRecipes(){
         for(String cuisine: cuisines){
             CollectionReference colref = db.collection(cuisine);
+
+            colref.document().get().addOnSuccessListener(
+                    new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                         public void onSuccess(DocumentSnapshot documentSnapshot) {
+                             if(documentSnapshot.exists()){
+                                 Recipe temporaryRecipe = documentSnapshot.toObject(Recipe.class);
+                                 if (! (temporaryRecipe == null)){
+                                     Log.e("recipe from Snapshot1", temporaryRecipe.toString());
+                                     recipes.add(temporaryRecipe);
+                                 }
+                                 else {
+                                     Log.e("recipe from Snapshot1", "Recipe not converted1");
+                                 }
+                             }
+                             else{
+                                 Log.e("Schedule activity1", "No docs picked up1");
+                             }
+                         }
+                     });
             colref.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                 @Override
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
