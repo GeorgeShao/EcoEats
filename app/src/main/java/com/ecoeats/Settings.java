@@ -53,6 +53,13 @@ public class Settings extends AppCompatActivity {
         final List<String> categories = new ArrayList<String>();
 
         categories.add("Ontario");
+        categories.add("BC");
+        categories.add("Alberta");
+        categories.add("Manitoba");
+        categories.add("Quebec");
+        categories.add("Nova Scotia");
+        categories.add("PEI");
+        categories.add("Saskatchewan");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         spinner.setAdapter(dataAdapter);
@@ -60,19 +67,14 @@ public class Settings extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 Toast.makeText(Settings.this, "Selected : "+ categories.get(position), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
-
-
     }
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
