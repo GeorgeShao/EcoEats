@@ -2,15 +2,17 @@ package com.ecoeats;
 
 import android.support.annotation.NonNull;
 
+import java.util.ArrayList;
+
 public class Recipe {
     private String name;
-    private String[] Ingredients = new String[30];
-    private String[] Instructions = new String[50];
+    private ArrayList<String> Ingredients = new ArrayList<>();
+    private ArrayList<String> Instructions = new ArrayList<>();
     private float time;
 
     public Recipe(){}
 
-    public Recipe(String name, String[] Ingredients, String[] Instructions, float time){
+    public Recipe(String name, ArrayList<String> Ingredients, ArrayList<String> Instructions, float time){
         this.Ingredients = Ingredients;
         this.Instructions = Instructions;
         this.time = time;
@@ -21,11 +23,11 @@ public class Recipe {
         return time;
     }
 
-    public String[] getInstructions() {
+    public ArrayList<String> getInstructions() {
         return Instructions;
     }
 
-    public String[] getIngredients() {
+    public ArrayList<String> getIngredients() {
         return Ingredients;
     }
 
