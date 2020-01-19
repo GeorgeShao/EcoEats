@@ -100,9 +100,10 @@ public class Schedule extends AppCompatActivity {
     }
 
     private void getRecipes(){
-        for(String cuisine: cuisines){
-            CollectionReference colref = db.collection(cuisine);
 
+        Log.v("DB methods", db.getApp().getName());
+        /*for(String cuisine: cuisines){
+            CollectionReference colref = db.collection(cuisine);
             colref.document().get().addOnSuccessListener(
                     new OnSuccessListener<DocumentSnapshot>() {
                         @Override
@@ -144,6 +145,6 @@ public class Schedule extends AppCompatActivity {
                     }
                 }
             );
-        }
+        }*/
     }
 }
