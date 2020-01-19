@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,6 +26,8 @@ public class Schedule extends AppCompatActivity {
     private TextView dinnerText;
     private TextView lunchTime;
     private TextView dinnerTime;
+    private CardView dinner;
+    private CardView lunch;
     private ArrayList<Recipe> recipes =  new ArrayList<>();
     private ArrayList<Recipe> currentRecipes =  new ArrayList<>();
     private ArrayList<String> cuisines = new ArrayList<>();
@@ -49,7 +53,8 @@ public class Schedule extends AppCompatActivity {
         cuisines.add("South-Asian");
 
         getRecipes();
-
+        lunch = findViewById(R.id.lunch_cardview);
+        dinner = findViewById(R.id.dinner_cardview);
         lunchText =  findViewById(R.id.recipe_name_lunch_textview);
         dinnerText = findViewById(R.id.recipe_name_dinner_textview);
         lunchTime =  findViewById(R.id.lunch_time_required_textview);
@@ -59,6 +64,17 @@ public class Schedule extends AppCompatActivity {
         System.out.println(recipes.size());
 
     }
+
+    private CardView.OnClickListener lOnClickListener = new CardView.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            Intent intent;
+            intent = new Intent(Schedule.this, Schedule.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
+
+        }
+    };
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
