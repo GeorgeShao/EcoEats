@@ -26,7 +26,7 @@ public class Schedule extends AppCompatActivity {
     private TextView lunchText;
     private TextView dinnerText;
     private ArrayList<Recipe> recipes =  new ArrayList<>();
-    private ArrayList<String> cuisines;
+    private ArrayList<String> cuisines = new ArrayList<>();
     private FirebaseFirestore db;
 
 
@@ -53,7 +53,8 @@ public class Schedule extends AppCompatActivity {
         cuisines.add("South-Asian");
 
         getRecipes();
-        if(recipes.size()>2){
+        System.out.println(recipes.size());
+        if(recipes.size()>=2){
             displaySchedule(0);
         }
         else{
