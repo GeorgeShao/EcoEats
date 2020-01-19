@@ -105,12 +105,18 @@ public class Schedule extends AppCompatActivity {
             colref.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                 @Override
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                    List<DocumentSnapshot> dSnaps = queryDocumentSnapshots.getDocuments();
-                    for (DocumentSnapshot dSnap:dSnaps){
-                        recipes.add(dSnap.toObject(Recipe.class));
+                        if(!queryDocumentSnapshots.isEmpty()){
+                            List<DocumentSnapshot> dSnaps = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot dSnap:dSnaps){
+                                recipes.add(dSnap.toObject(Recipe.class));
+                            }
+                        }
+                        else{
+                            Log.e("Schedule activity", "No docs picked up");
+                        }
                     }
                 }
-            });
+            );
         }
     }
 }
