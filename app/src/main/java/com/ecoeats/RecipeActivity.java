@@ -41,7 +41,7 @@ public class RecipeActivity extends AppCompatActivity {
         title.setText(recipe.getName());
 
         TextView time = findViewById(R.id.duration);
-        time.setText(Integer.toString(recipe.getTime()));
+        time.setText(Integer.toString(recipe.getTime()) + " min");
 
         ingredientsList =  new ArrayList<>();
         ingredientsListView = findViewById(R.id.ingredients_list);
@@ -103,7 +103,7 @@ public class RecipeActivity extends AppCompatActivity {
     public void addInstructions( ArrayList<String> instructions) {
         String entry = "";
         for (int i = 0; i < instructions.size(); i++) {
-            entry += "  - " + instructions.get(i) + "\n";
+            entry += i+1 + ". " + instructions.get(i) + "\n\n";
         }
         instructionsList.add(entry);
         instructionsListAdapter.notifyDataSetChanged();
