@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 
-public class Recipe {
+public class Recipe implements java.io.Serializable{
     private String Name;
     private ArrayList<String> Ingredients = new ArrayList<>();
     private ArrayList<String> Instructions = new ArrayList<>();

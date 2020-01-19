@@ -6,7 +6,7 @@
     <string name="title_settings">Settings</string>
 
     <!--George Strings-->
-    <string name="schedule_message">Today</string>
+    <string name="schedule_message">Today\'s Meals</string>
     <string name="schedule_lunch">Lunch</string>
     <string name="schedule_dinner">Dinner</string>
     <string name="schedule_lunch_recipe_name">Name of Delicious Lunch</string>

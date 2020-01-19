@@ -25,6 +25,7 @@ public class Schedule extends AppCompatActivity {
     private TextView lunchTime;
     private TextView dinnerTime;
     private ArrayList<Recipe> recipes =  new ArrayList<>();
+    private ArrayList<Recipe> currentRecipes =  new ArrayList<>();
     private ArrayList<String> cuisines = new ArrayList<>();
     private FirebaseFirestore db;
 
@@ -78,6 +79,7 @@ public class Schedule extends AppCompatActivity {
                     return true;
                 case R.id.navigation_shopping_list:
                     intent = new Intent(Schedule.this, ShoppingList.class);
+                    intent.putExtra("recipes", currentRecipes);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     return true;
@@ -99,6 +101,8 @@ public class Schedule extends AppCompatActivity {
             lunchTime.setText(lTime);
             String dTime = "Time required: "+(recipes.get(day*2 + 1).getTime())+" min.";
             dinnerTime.setText(dTime);
+            currentRecipes.add(recipes.get(day*2));
+            currentRecipes.add(recipes.get(day*2+1));
         }
         else {
             Log.e("Schedule activity", "Recipes is too small");
