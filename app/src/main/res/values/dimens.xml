@@ -9,4 +9,8 @@
     <dimen name="schedule_mealtype_textsize">20sp</dimen>
     <dimen name="schedule_recipename_textsize">40sp</dimen>
     <dimen name="schedule_timereq_textsize">25sp</dimen>
+
+    <dimen name="checkbox_width">140dp</dimen>
+    <dimen name="checkbox_height">40dp</dimen>
+    <dimen name="checkbox_fontsize">16sp</dimen>
 </resources>

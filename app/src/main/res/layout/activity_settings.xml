@@ -5,7 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_gravity="center_horizontal">
 
     <TextView
         android:id="@+id/intro"
@@ -34,21 +35,20 @@
 
     <CheckBox
         android:id="@+id/american"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="@dimen/checkbox_width"
+        android:layout_height="@dimen/checkbox_height"
+        android:textSize="@dimen/checkbox_fontsize"
         android:layout_marginTop="8dp"
         android:text="American"
         android:textColor="#000000"
-        android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/italian"
         app:layout_constraintTop_toBottomOf="@+id/food_pref" />
 
     <TextView
         android:id="@+id/commitment"
-        android:layout_width="466dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="170dp"
         android:gravity="center_horizontal"
         android:text="@string/meat_freq"
         android:textColor="#000000"
@@ -62,9 +62,11 @@
     <SeekBar
         android:id="@+id/meal_number_bar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="454dp"
+        android:layout_width="match_parent"
         android:layout_height="34dp"
         android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="#0F0"
         android:max="14"
         android:progress="0"
@@ -89,36 +91,34 @@
 
     <CheckBox
         android:id="@+id/asian"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="@dimen/checkbox_width"
+        android:layout_height="@dimen/checkbox_height"
+        android:textSize="@dimen/checkbox_fontsize"
+        android:layout_marginTop="8dp"
         android:text="Asian"
         android:textColor="#000000"
-        android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/indian"
         app:layout_constraintTop_toBottomOf="@+id/greek" />
 
     <CheckBox
         android:id="@+id/italian"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/checkbox_width"
+        android:layout_height="@dimen/checkbox_height"
+        android:textSize="@dimen/checkbox_fontsize"
         android:layout_marginTop="8dp"
         android:text="Italian"
         android:textColor="#000000"
-        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/food_pref"
         app:layout_constraintTop_toBottomOf="@+id/food_pref" />
 
     <CheckBox
         android:id="@+id/greek"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="@dimen/checkbox_width"
+        android:layout_height="@dimen/checkbox_height"
+        android:textSize="@dimen/checkbox_fontsize"
         android:layout_marginTop="8dp"
         android:text="Greek"
         android:textColor="#000000"
-        android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/mediterranean"
         app:layout_constraintTop_toBottomOf="@+id/american" />
 
@@ -137,23 +137,23 @@
 
     <CheckBox
         android:id="@+id/mediterranean"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/checkbox_width"
+        android:layout_height="@dimen/checkbox_height"
+        android:textSize="@dimen/checkbox_fontsize"
         android:text="Mediterranean"
+        android:layout_marginTop="8dp"
         android:textColor="#000000"
-        android:textSize="8.5sp"
         app:layout_constraintStart_toStartOf="@+id/food_pref"
         app:layout_constraintTop_toBottomOf="@+id/italian" />
 
     <CheckBox
         android:id="@+id/indian"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="@dimen/checkbox_width"
+        android:layout_height="@dimen/checkbox_height"
+        android:textSize="@dimen/checkbox_fontsize"
         android:text="South Asian"
         android:textColor="#000000"
-        android:textSize="10sp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/food_pref"
         app:layout_constraintTop_toBottomOf="@+id/mediterranean" />
 
@@ -183,13 +183,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="466dp"
-        android:layout_height="399dp"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
         android:layout_marginBottom="116dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/commitment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo" />
 
 
