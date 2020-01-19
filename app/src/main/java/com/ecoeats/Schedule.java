@@ -7,7 +7,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class Schedule extends AppCompatActivity {
+    ArrayList<String> cuisines;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +18,10 @@ public class Schedule extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.getMenu().getItem(1).setChecked(true);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            cuisines = bundle.getStringArrayList("cuisines");
+        }
         DatabaseAccess db = new DatabaseAccess();
         db.getAmerican("Tomato Pie");
     }

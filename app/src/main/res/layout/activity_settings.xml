@@ -119,7 +119,7 @@
         android:layout_marginTop="8dp"
         android:text="Mediterranean"
         android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/greek"
+        app:layout_constraintStart_toEndOf="@+id/caribbean"
         app:layout_constraintTop_toBottomOf="@+id/american" />
 
     <TextView
@@ -136,14 +136,14 @@
         app:layout_constraintTop_toBottomOf="@+id/meal_number_bar" />
 
     <CheckBox
-        android:id="@+id/greek"
+        android:id="@+id/caribbean"
         android:layout_width="@dimen/checkbox_width"
         android:layout_height="@dimen/checkbox_height"
-        android:textSize="@dimen/checkbox_fontsize"
-        android:text="Greek"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="8dp"
+        android:text="Caribbean"
         android:textColor="#000000"
+        android:textSize="@dimen/checkbox_fontsize"
         app:layout_constraintStart_toStartOf="@+id/food_pref"
         app:layout_constraintTop_toBottomOf="@+id/italian" />
 
@@ -157,7 +157,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="100dp"
         app:layout_constraintStart_toStartOf="@+id/food_pref"
-        app:layout_constraintTop_toBottomOf="@+id/greek" />
+        app:layout_constraintTop_toBottomOf="@+id/caribbean" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
