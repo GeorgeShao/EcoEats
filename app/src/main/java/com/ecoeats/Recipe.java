@@ -13,8 +13,16 @@ public class Recipe {
         this.time = time;
     }
 
+    public float getTime() {
+        return time;
+    }
 
+    public String[] getInstructions() {
+        return Instructions;
+    }
 
-
+    public String[] getIngredients() {
+        return Ingredients;
+    }
 }
 
