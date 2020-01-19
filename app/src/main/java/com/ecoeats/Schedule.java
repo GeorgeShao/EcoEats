@@ -53,8 +53,12 @@ public class Schedule extends AppCompatActivity {
         cuisines.add("South-Asian");
 
         getRecipes();
+
         lunch = findViewById(R.id.lunch_cardview);
+        lunch.setOnClickListener(lOnClickListener);
         dinner = findViewById(R.id.dinner_cardview);
+        dinner.setOnClickListener(dOnClickListener);
+
         lunchText =  findViewById(R.id.recipe_name_lunch_textview);
         dinnerText = findViewById(R.id.recipe_name_dinner_textview);
         lunchTime =  findViewById(R.id.lunch_time_required_textview);
@@ -69,8 +73,21 @@ public class Schedule extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             Intent intent;
-            intent = new Intent(Schedule.this, Schedule.class);
+            intent = new Intent(Schedule.this, RecipeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            intent.putExtra("recipe", currentRecipes.get(0));
+            startActivity(intent);
+
+        }
+    };
+
+    private CardView.OnClickListener dOnClickListener = new CardView.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            Intent intent;
+            intent = new Intent(Schedule.this, RecipeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            intent.putExtra("recipe", currentRecipes.get(1));
             startActivity(intent);
 
         }
@@ -136,7 +153,6 @@ public class Schedule extends AppCompatActivity {
                             for (DocumentSnapshot dSnap:dSnaps){
                                 Recipe temporaryRecipe = dSnap.toObject(Recipe.class);
                                 if (! (temporaryRecipe == null)){
-                                    Log.e("recipe from Snapshot", temporaryRecipe.toString());
                                     recipes.add(temporaryRecipe);
                                     displaySchedule(0);
 

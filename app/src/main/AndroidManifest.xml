@@ -21,6 +21,7 @@
         <activity android:name="com.ecoeats.ShoppingList"/>
         <activity android:name="com.ecoeats.Schedule"/>
         <activity android:name="com.ecoeats.Settings"/>
+        <activity android:name="com.ecoeats.RecipeActivity"/>
     </application>
 
 </manifest>
