@@ -5,17 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -27,6 +22,8 @@ public class Schedule extends AppCompatActivity {
 
     private TextView lunchText;
     private TextView dinnerText;
+    private TextView lunchTime;
+    private TextView dinnerTime;
     private ArrayList<Recipe> recipes =  new ArrayList<>();
     private ArrayList<String> cuisines = new ArrayList<>();
     private FirebaseFirestore db;
@@ -36,7 +33,7 @@ public class Schedule extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.getMenu().getItem(1).setChecked(true);
         Bundle bundle = getIntent().getExtras();
@@ -45,23 +42,21 @@ public class Schedule extends AppCompatActivity {
         }*/
         db = FirebaseFirestore.getInstance();
 
-        lunchText =  findViewById(R.id.recipe_name_lunch_textview);
-        dinnerText = findViewById(R.id.recipe_name_dinner_textview);
-
-
         cuisines.add("American");
         cuisines.add("Italian");
         cuisines.add("Mediterranean");
         cuisines.add("South-Asian");
 
         getRecipes();
+
+        lunchText =  findViewById(R.id.recipe_name_lunch_textview);
+        dinnerText = findViewById(R.id.recipe_name_dinner_textview);
+        lunchTime =  findViewById(R.id.lunch_time_required_textview);
+        dinnerTime = findViewById(R.id.time_required_dinner_textview);
+
+        displaySchedule(0);
         System.out.println(recipes.size());
-        if(recipes.size()>=2){
-            displaySchedule(0);
-        }
-        else{
-            Log.e("Schedule activity", "Recipes is too small");
-        }
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -97,50 +92,22 @@ public class Schedule extends AppCompatActivity {
     };
 
     private void displaySchedule(int day){
-        lunchText.setText(recipes.get(day*2).getName());
-        dinnerText.setText(recipes.get(day*2+1).getName());
+        if(recipes.size()>=2){
+            lunchText.setText(recipes.get(day*2).getName());
+            dinnerText.setText(recipes.get(day*2+1).getName());
+            String lTime = "Time required: "+(recipes.get(day*2).getTime())+" min.";
+            lunchTime.setText(lTime);
+            String dTime = "Time required: "+(recipes.get(day*2 + 1).getTime())+" min.";
+            dinnerTime.setText(dTime);
+        }
+        else {
+            Log.e("Schedule activity", "Recipes is too small");
+        }
     }
 
     private void getRecipes(){
-        final String TAG = "Get Recipes";
-        DocumentReference dref = db.collection("American").document("Chopped Salad");
-        dref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.toObject(Recipe.class));
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
-        Log.v("DB methods", "");
-        /*for(String cuisine: cuisines){
+        for(String cuisine: cuisines){
             CollectionReference colref = db.collection(cuisine);
-            colref.document().get().addOnSuccessListener(
-                    new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                         public void onSuccess(DocumentSnapshot documentSnapshot) {
-                             if(documentSnapshot.exists()){
-                                 Recipe temporaryRecipe = documentSnapshot.toObject(Recipe.class);
-                                 if (! (temporaryRecipe == null)){
-                                     Log.e("recipe from Snapshot1", temporaryRecipe.toString());
-                                     recipes.add(temporaryRecipe);
-                                 }
-                                 else {
-                                     Log.e("recipe from Snapshot1", "Recipe not converted1");
-                                 }
-                             }
-                             else{
-                                 Log.e("Schedule activity1", "No docs picked up1");
-                             }
-                         }
-                     });
             colref.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                 @Override
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -151,6 +118,8 @@ public class Schedule extends AppCompatActivity {
                                 if (! (temporaryRecipe == null)){
                                     Log.e("recipe from Snapshot", temporaryRecipe.toString());
                                     recipes.add(temporaryRecipe);
+                                    displaySchedule(0);
+
                                 }
                                 else {
                                     Log.e("recipe from Snapshot", "Recipe not converted");
@@ -163,6 +132,6 @@ public class Schedule extends AppCompatActivity {
                     }
                 }
             );
-        }*/
+        }
     }
 }

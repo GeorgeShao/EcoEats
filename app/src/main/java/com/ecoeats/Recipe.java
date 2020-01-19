@@ -5,22 +5,22 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 
 public class Recipe {
-    private String name;
+    private String Name;
     private ArrayList<String> Ingredients = new ArrayList<>();
     private ArrayList<String> Instructions = new ArrayList<>();
-    private float time;
+    private int Time;
 
     public Recipe(){}
 
-    public Recipe(String name, ArrayList<String> Ingredients, ArrayList<String> Instructions, float time){
+    public Recipe(String name, ArrayList<String> Ingredients, ArrayList<String> Instructions, int time){
         this.Ingredients = Ingredients;
         this.Instructions = Instructions;
-        this.time = time;
-        this.name = name;
+        this.Time = time;
+        this.Name = name;
     }
 
-    public float getTime() {
-        return time;
+    public int getTime() {
+        return Time;
     }
 
     public ArrayList<String> getInstructions() {
@@ -32,13 +32,13 @@ public class Recipe {
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     @NonNull
     @Override
     public String toString() {
-        return this.name+ " " + this.time;
+        return this.Name+ " " + this.Time;
     }
 }
 
