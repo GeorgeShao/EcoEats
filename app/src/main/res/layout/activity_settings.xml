@@ -98,7 +98,7 @@
         android:text="Asian"
         android:textColor="#000000"
         app:layout_constraintStart_toEndOf="@+id/indian"
-        app:layout_constraintTop_toBottomOf="@+id/greek" />
+        app:layout_constraintTop_toBottomOf="@+id/mediterranean" />
 
     <CheckBox
         android:id="@+id/italian"
@@ -112,14 +112,14 @@
         app:layout_constraintTop_toBottomOf="@+id/food_pref" />
 
     <CheckBox
-        android:id="@+id/greek"
+        android:id="@+id/mediterranean"
         android:layout_width="@dimen/checkbox_width"
         android:layout_height="@dimen/checkbox_height"
         android:textSize="@dimen/checkbox_fontsize"
         android:layout_marginTop="8dp"
-        android:text="Greek"
+        android:text="Mediterranean"
         android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/mediterranean"
+        app:layout_constraintStart_toEndOf="@+id/greek"
         app:layout_constraintTop_toBottomOf="@+id/american" />
 
     <TextView
@@ -136,11 +136,11 @@
         app:layout_constraintTop_toBottomOf="@+id/meal_number_bar" />
 
     <CheckBox
-        android:id="@+id/mediterranean"
+        android:id="@+id/greek"
         android:layout_width="@dimen/checkbox_width"
         android:layout_height="@dimen/checkbox_height"
         android:textSize="@dimen/checkbox_fontsize"
-        android:text="Mediterranean"
+        android:text="Greek"
         android:layout_marginTop="8dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/food_pref"
@@ -155,7 +155,7 @@
         android:textColor="#000000"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/food_pref"
-        app:layout_constraintTop_toBottomOf="@+id/mediterranean" />
+        app:layout_constraintTop_toBottomOf="@+id/greek" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -184,8 +184,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginBottom="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/commitment"
