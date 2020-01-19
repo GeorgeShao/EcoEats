@@ -16,7 +16,7 @@
             android:layout_height="64dp"
             android:gravity="center"
             android:textStyle="bold"
-            android:text="Weekly Shopping List"
+            android:text="Daily Shopping List"
             android:textSize="30sp" />
 
         <ListView

@@ -15,6 +15,7 @@ public class ShoppingList extends AppCompatActivity {
     ListView shoppingListView;
     ArrayAdapter<String> listAdapter;
     ArrayList<String> itemsList;
+    ArrayList<Recipe> recipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +24,18 @@ public class ShoppingList extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.getMenu().getItem(2).setChecked(true);
-        shoppingListView = (ListView)findViewById(R.id.shopping_list);
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null) {
+            recipes = (ArrayList<Recipe>) bundle.get("recipes");
+        }
+        shoppingListView = findViewById(R.id.shopping_list);
         itemsList = new ArrayList<>();
         listAdapter = new ArrayAdapter<>(ShoppingList.this, android.R.layout.simple_list_item_1, itemsList);
         shoppingListView.setAdapter(listAdapter);
+
+        addMeal(recipes.get(0).getName(), recipes.get(0).getIngredients());
+        addMeal(recipes.get(1).getName(), recipes.get(1).getIngredients());
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -61,10 +70,10 @@ public class ShoppingList extends AppCompatActivity {
         }
     };
 
-    public void addMeal(String mealName, ArrayList<String> ingredients, ArrayList<Integer> quantity) {
+    public void addMeal(String mealName, ArrayList<String> ingredients) {
         String entry = mealName + "\n";
         for (int i = 0; i < ingredients.size(); i++) {
-            entry += "  - " + ingredients.get(i) + " x" + quantity.get(i) + "\n";
+            entry += "  - " + ingredients.get(i) + "\n";
         }
         itemsList.add(entry);
         listAdapter.notifyDataSetChanged();
