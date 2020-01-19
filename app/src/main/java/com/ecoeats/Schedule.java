@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -54,6 +55,9 @@ public class Schedule extends AppCompatActivity {
         getRecipes();
         if(recipes.size()>2){
             displaySchedule(0);
+        }
+        else{
+            Log.e("Schedule activity", "Recipes is too small");
         }
     }
 
