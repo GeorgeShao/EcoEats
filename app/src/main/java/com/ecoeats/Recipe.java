@@ -1,16 +1,18 @@
 package com.ecoeats;
 
 public class Recipe {
+    private String name;
     private String[] Ingredients = new String[30];
     private String[] Instructions = new String[50];
     private float time;
 
     public Recipe(){}
 
-    public Recipe(String[] Ingredients, String[] Instructions, float time){
+    public Recipe(String name, String[] Ingredients, String[] Instructions, float time){
         this.Ingredients = Ingredients;
         this.Instructions = Instructions;
         this.time = time;
+        this.name = name;
     }
 
     public float getTime() {
@@ -23,6 +25,10 @@ public class Recipe {
 
     public String[] getIngredients() {
         return Ingredients;
+    }
+
+    public String getName() {
+        return name;
     }
 }
 
