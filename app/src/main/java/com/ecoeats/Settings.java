@@ -33,6 +33,13 @@ public class Settings extends AppCompatActivity {
         final List<String> categories = new ArrayList<String>();
 
         categories.add("Ontario");
+        categories.add("BC");
+        categories.add("Alberta");
+        categories.add("Manitoba");
+        categories.add("Quebec");
+        categories.add("Nova Scotia");
+        categories.add("PEI");
+        categories.add("Saskatchewan");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         spinner.setAdapter(dataAdapter);
